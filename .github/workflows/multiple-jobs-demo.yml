@@ -13,7 +13,6 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '17'
-          check-latest: true
 
       - name: Run demo test
         run: |
@@ -32,7 +31,6 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '17'
-          check-latest: true
 
       - name: deploy code to server
         run: |
