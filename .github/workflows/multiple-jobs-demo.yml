@@ -8,10 +8,12 @@ jobs:
       - name: Get code
         uses: actions/checkout@v3
 
-      - name: Set up JDK 18
+      - name: Set up JDK 17
         uses: actions/setup-java@v3
         with:
-          java-version: 17
+          distribution: 'temurin'
+          java-version: '17'
+          check-latest: true
 
       - name: Run demo test
         run: |
@@ -28,7 +30,9 @@ jobs:
       - name: Set up JDK 17
         uses: actions/setup-java@v3
         with:
-          java-version: 17
+          distribution: 'temurin'
+          java-version: '17'
+          check-latest: true
 
       - name: deploy code to server
         run: |
