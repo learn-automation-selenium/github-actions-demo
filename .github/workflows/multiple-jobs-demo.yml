@@ -1,4 +1,4 @@
-name: first-action
+name: miltiple jobs
 on: push
 jobs:
   test:
