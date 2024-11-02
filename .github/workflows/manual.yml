@@ -1,0 +1,16 @@
+name: Scheduled Workflow in JST
+
+on:
+  schedule:
+    - cron: '25 9 * * 6'  # Example: Every day at 9:00 AM
+      timezone: 'Asia/Tokyo'  # Set timezone to JST
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - name: Run your task
+      run: echo "Running scheduled job in JST"
