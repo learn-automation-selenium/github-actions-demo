@@ -1,0 +1,32 @@
+---
+name: Lint
+
+on: # yamllint disable-line rule:truthy
+  push: null
+  pull_request: null
+
+permissions:
+  contents: read
+
+jobs:
+  lint:
+    # Super-linter workflow running in check only mode
+    # See https://github.com/super-linter/super-linter#get-started
+
+  fix-lint-issues:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Super-Linter
+        uses: super-linter/super-linter@v7.1.0 # x-release-please-version
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # Set your fix mode variables to true
+          VALIDATE_YAML: true
+          FIX_YAML_PRETTIER: true
+          # To reuse the same Super-linter configuration that you use in the
+          # lint job without duplicating it, see
+          # https://github.com/super-linter/super-linter/blob/main/docs/run-linter-locally.md#share-environment-variables-between-environments
+      
