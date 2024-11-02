@@ -9,13 +9,11 @@ permissions:
   contents: read
 
 jobs:
-  lint:
-    # Super-linter workflow running in check only mode
-    # See https://github.com/super-linter/super-linter#get-started
 
-  fix-lint-issues:
+  lint:
     runs-on: ubuntu-latest
     steps:
+    
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
